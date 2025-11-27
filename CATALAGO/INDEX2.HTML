@@ -1,0 +1,1162 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JP ESTILO PRIVADO - Catálogo Oficial</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f0f4f8;
+            min-height: 100vh;
+        }
+
+        /* BARRA SUPERIOR CON LOGO */
+        .top-bar {
+            background: linear-gradient(135deg, #003d5c 0%, #0078d7 50%, #00b4d8 100%);
+            padding: 15px 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .top-bar-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
+        }
+
+        .logo-header {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .logo-header img {
+            width: 80px;
+            height: 80px;
+            border: 3px solid white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            object-fit: cover;
+            transform: scaleX(1.8) translateX(-15px) !important;
+            margin-left: 0 !important;
+        }
+
+        .brand-name {
+            color: white;
+            font-size: 1.8em;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            letter-spacing: 2px;
+        }
+
+        /* NUEVAS ESTADÍSTICAS EN HEADER */
+        .header-stats {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .stat-item {
+            text-align: center;
+            color: white;
+        }
+
+        .stat-number {
+            font-size: 1.8em;
+            font-weight: bold;
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 0.85em;
+            opacity: 0.9;
+        }
+
+        /* SIDEBAR */
+        .sidebar {
+            position: fixed;
+            left: 0;
+            top: 110px;
+            width: 280px;
+            background: white;
+            box-shadow: 4px 0 15px rgba(0,0,0,0.1);
+            padding: 25px;
+            height: calc(100vh - 110px);
+            overflow-y: auto;
+            z-index: 999;
+            border-radius: 0 15px 0 0;
+        }
+
+        .sidebar-title {
+            font-size: 1.3em;
+            color: #003d5c;
+            margin-bottom: 20px;
+            font-weight: bold;
+            border-bottom: 3px solid #0078d7;
+            padding-bottom: 10px;
+        }
+
+        .sidebar-menu {
+            list-style: none;
+        }
+
+        .sidebar-menu li {
+            margin-bottom: 12px;
+        }
+
+        .sidebar-link {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 15px;
+            color: #333;
+            text-decoration: none;
+            border-radius: 10px;
+            transition: all 0.3s;
+            font-weight: 500;
+        }
+
+        .sidebar-link:hover {
+            background: linear-gradient(135deg, #0078d7, #00b4d8);
+            color: white;
+            transform: translateX(5px);
+        }
+
+        .sidebar-link.active {
+            background: linear-gradient(135deg, #003d5c, #0078d7);
+            color: white;
+        }
+
+        .sidebar-icon {
+            font-size: 1.4em;
+        }
+
+        .sidebar-section {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 2px solid #e0e0e0;
+        }
+
+        .sidebar-section-title {
+            font-size: 1em;
+            color: #0078d7;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .quick-filter-btn {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 8px;
+            border: 2px solid #0078d7;
+            background: white;
+            color: #0078d7;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .quick-filter-btn:hover {
+            background: #0078d7;
+            color: white;
+        }
+
+        /* CONTENIDO PRINCIPAL CON MARGEN PARA SIDEBAR */
+        .main-content {
+            margin-left: 280px;
+            padding: 20px;
+        }
+
+        /* BANNER HERO MEJORADO */
+        .hero-banner {
+            background: linear-gradient(135deg, #0078d7 0%, #00b4d8 50%, #487fe4 100%);
+            padding: 60px 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            border-radius: 20px;
+            margin-bottom: 30px;
+        }
+
+        .hero-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 40px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .hero-content .left-img {
+            margin-left: -35px;
+        }
+
+        .hero-content .right-img {
+            margin-right: -35px;
+        }
+
+        .banner-img {
+            width: 250px;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+        }
+
+        .hero-text {
+            flex: 2;
+            max-width: 900px;
+            text-align: center;
+        }
+
+        .hero-title {
+            font-size: 3.5em;
+            color: rgb(5, 5, 5);
+            font-weight: bold;
+            margin-bottom: 20px;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.3);
+            animation: fadeInDown 1s ease;
+        }
+
+        .hero-subtitle {
+            font-size: 1.8em;
+            color: rgb(14, 13, 13);
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+            animation: fadeInUp 1s ease 0.3s both;
+        }
+
+        .hero-description {
+            font-size: 1.3em;
+            color: rgba(10, 9, 9, 0.95);
+            line-height: 1.6;
+            animation: fadeInUp 1s ease 0.6s both;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px 40px;
+        }
+
+        /* BUSCADOR NUEVO */
+        .search-section {
+            background: white;
+            padding: 25px;
+            border-radius: 20px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+
+        .search-container {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .search-input {
+            flex: 1;
+            padding: 15px 20px;
+            border: 3px solid #0078d7;
+            border-radius: 12px;
+            font-size: 1.1em;
+            transition: all 0.3s;
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: #00b4d8;
+            box-shadow: 0 0 0 4px rgba(0,180,216,0.2);
+        }
+
+        .search-btn {
+            padding: 15px 35px;
+            background: linear-gradient(135deg, #0078d7, #00b4d8);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 1.1em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .search-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,120,215,0.4);
+        }
+
+        /* FILTROS MEJORADOS */
+        .filters-section {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            margin-bottom: 40px;
+        }
+
+        .filters-title {
+            font-size: 1.5em;
+            color: #003d5c;
+            margin-bottom: 20px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .filters {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .filter-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .filter-label {
+            font-weight: bold;
+            color: #003d5c;
+            font-size: 0.95em;
+        }
+
+        select {
+            padding: 12px 20px;
+            border: 2px solid #0078d7;
+            border-radius: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            background: white;
+            transition: all 0.3s;
+            min-width: 200px;
+        }
+
+        select:hover {
+            border-color: #003d5c;
+            box-shadow: 0 3px 10px rgba(0,120,215,0.2);
+        }
+
+        select:focus {
+            outline: none;
+            border-color: #00b4d8;
+            box-shadow: 0 0 0 3px rgba(0,180,216,0.2);
+        }
+
+        /* TARJETAS DE PRODUCTOS MEJORADAS */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            transition: all 0.4s ease;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .product-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(0,120,215,0.1) 0%, rgba(0,180,216,0.1) 100%);
+            opacity: 0;
+            transition: opacity 0.4s;
+        }
+
+        .product-card:hover::before {
+            opacity: 1;
+        }
+
+        .product-card:hover {
+            transform: translateY(-15px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0,120,215,0.3);
+        }
+
+        .product-ribbon {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: linear-gradient(135deg, #0078d7, #00b4d8);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: bold;
+            z-index: 10;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 280px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 90px;
+            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .product-image-placeholder {
+            font-size: 80px;
+        }
+
+        .upload-overlay {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background: rgba(0,120,215,0.9);
+            color: white;
+            padding: 8px 12px;
+            border-radius: 8px;
+            font-size: 0.85em;
+            font-weight: bold;
+        }
+
+        .product-info {
+            padding: 25px;
+        }
+
+        .product-name {
+            font-size: 1.4em;
+            font-weight: bold;
+            color: #003d5c;
+            margin-bottom: 12px;
+        }
+
+        .product-category {
+            color: #0078d7;
+            font-weight: 700;
+            margin-bottom: 12px;
+            font-size: 0.95em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .product-price {
+            font-size: 2em;
+            color: #00b4d8;
+            font-weight: bold;
+            margin-bottom: 20px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+        }
+
+        .product-details {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 15px;
+        }
+
+        .detail-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            font-size: 0.95em;
+        }
+
+        .detail-label {
+            font-weight: 700;
+            color: #003d5c;
+            min-width: 70px;
+        }
+
+        .colors {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .color-dot {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            border: 3px solid #ddd;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        .color-dot:hover {
+            transform: scale(1.3);
+            border-color: #0078d7;
+            box-shadow: 0 4px 10px rgba(0,120,215,0.4);
+        }
+
+        .sizes {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .size-badge {
+            padding: 8px 14px;
+            background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+            border-radius: 8px;
+            font-size: 0.9em;
+            font-weight: 700;
+            color: #003d5c;
+            transition: all 0.3s;
+            border: 2px solid transparent;
+        }
+
+        .size-badge:hover {
+            background: linear-gradient(135deg, #0078d7, #00b4d8);
+            color: white;
+            transform: scale(1.1);
+        }
+
+        /* SECCIÓN DE CONTACTO MEJORADA */
+        .contact-section {
+            background: linear-gradient(135deg, #003d5c 0%, #0078d7 50%, #00b4d8 100%);
+            padding: 60px 30px;
+            border-radius: 25px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+            margin-top: 50px;
+            color: white;
+        }
+
+        .contact-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .contact-title {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        .contact-subtitle {
+            font-size: 1.3em;
+            margin-bottom: 40px;
+            opacity: 0.95;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .contact-card {
+            background: rgba(255,255,255,0.15);
+            padding: 30px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255,255,255,0.2);
+            transition: all 0.3s;
+        }
+
+        .contact-card:hover {
+            background: rgba(255,255,255,0.25);
+            transform: translateY(-5px);
+        }
+
+        .contact-icon {
+            font-size: 3em;
+            margin-bottom: 15px;
+        }
+
+        .contact-label {
+            font-size: 1.1em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .contact-info {
+            font-size: 1.2em;
+            opacity: 0.95;
+        }
+
+        .contact-link {
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .contact-link:hover {
+            opacity: 0.8;
+            text-decoration: underline;
+        }
+
+        /* FOOTER */
+        .footer {
+            background: #003d5c;
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 50px;
+        }
+
+        .footer-text {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+
+        .no-products {
+            text-align: center;
+            padding: 80px 20px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+
+        .no-products-icon {
+            font-size: 4em;
+            margin-bottom: 20px;
+        }
+
+        .no-products-text {
+            font-size: 1.4em;
+            color: #666;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 1024px) {
+            .sidebar {
+                transform: translateX(-100%);
+                transition: transform 0.3s;
+            }
+
+            .sidebar.active {
+                transform: translateX(0);
+            }
+
+            .main-content {
+                margin-left: 0;
+            }
+
+            .menu-toggle {
+                display: block;
+                position: fixed;
+                left: 20px;
+                top: 120px;
+                background: #d700c1;
+                color: white;
+                border: none;
+                padding: 15px;
+                border-radius: 50%;
+                cursor: pointer;
+                z-index: 1000;
+                box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2em;
+            }
+
+            .hero-subtitle {
+                font-size: 1.3em;
+            }
+
+            .hero-description {
+                font-size: 1em;
+            }
+
+            .brand-name {
+                font-size: 1.2em;
+            }
+
+            .logo-header img {
+                width: 60px;
+                height: 60px;
+            }
+
+            .header-stats {
+                display: none;
+            }
+
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .filters {
+                flex-direction: column;
+            }
+
+            select {
+                width: 100%;
+            }
+
+            .contact-title {
+                font-size: 1.8em;
+            }
+
+            .contact-subtitle {
+                font-size: 1em;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-content .left-img,
+            .hero-content .right-img {
+                display: none;
+            }
+        }
+
+        .menu-toggle {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- BOTÓN MENÚ MÓVIL -->
+    <button class="menu-toggle" onclick="toggleSidebar()">☰</button>
+
+    <!-- BARRA SUPERIOR -->
+    <div class="top-bar">
+        <div class="top-bar-content">
+            <div class="logo-header">
+                <img src="IMG/ESTILO PRIVADO.jpg" alt="JP ESTILO PRIVADO">
+                <div class="brand-name">JP ESTILO PRIVADO</div>
+            </div>
+            <div class="header-stats">
+                <div class="stat-item">
+                
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">50+</span>
+                    <span class="stat-label">Productos</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">4.9⭐</span>
+                    <span class="stat-label">Calificación</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar" id="sidebar">
+        <h3 class="sidebar-title">Menú Principal</h3>
+        <ul class="sidebar-menu">
+            <li><a href="#" class="sidebar-link active" onclick="showAllProducts()"><span class="sidebar-icon">🏠</span> Inicio</a></li>
+            <li><a href="#" class="sidebar-link" onclick="filterByCategory('playeras')"><span class="sidebar-icon">👕</span> Playeras</a></li>
+            <li><a href="#" class="sidebar-link" onclick="filterByCategory('chamarras')"><span class="sidebar-icon">🧥</span> Chamarras</a></li>
+            <li><a href="#" class="sidebar-link" onclick="filterByCategory('sueteres')"><span class="sidebar-icon">🧶</span> Suéteres</a></li>
+            <li><a href="#" class="sidebar-link" onclick="filterByCategory('mariconeras')"><span class="sidebar-icon">👜</span> Mariconeras</a></li>
+        </ul>
+
+        <div class="sidebar-section">
+            <h4 class="sidebar-section-title">Filtros Rápidos</h4>
+            <button class="quick-filter-btn" onclick="filterByBadge('NUEVO')">🆕 Nuevos Productos</button>
+            <button class="quick-filter-btn" onclick="filterByBadge('OFERTA')">🔥 Ofertas</button>
+            <button class="quick-filter-btn" onclick="filterByBadge('POPULAR')">⭐ Populares</button>
+        </div>
+
+        <div class="sidebar-section">
+            <h4 class="sidebar-section-title">Información</h4>
+            <ul class="sidebar-menu">
+                <li><a href="#contact" class="sidebar-link"><span class="sidebar-icon">📞</span> Contacto</a></li>
+            </ul>
+        </div>
+    </aside>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <div class="main-content">
+        <!-- BANNER HERO -->
+        <div class="hero-banner">
+            <div class="hero-content">
+                <img src="IMG/ESTILO PRIVADO.jpg" class="banner-img left-img" alt="JP Estilo">
+                <div class="hero-text">
+                    <h1 class="hero-title">LO QUE VISTES HABLA DE TI. ELIGE JP ESTILO PRIVADO.</h1>
+                    <p class="hero-subtitle">Vístete con actitud, luce con elegancia con JP Estilo Privado.</p>
+                    <p class="hero-description">
+                        En JP Estilo Privado encontrarás ropa para hombre con calidad premium y diseños que marcan diferencia. Viste con estilo auténtico
+                    </p>
+                </div>
+                <img src="IMG/ESTILO PRIVADO.jpg" class="banner-img right-img" alt="JP Estilo">
+            </div>
+        </div>
+
+        <div class="container">
+            <!-- BUSCADOR -->
+            <div class="search-section">
+                <div class="search-container">
+                    <input type="text" id="searchInput" class="search-input" placeholder="🔍 Busca tu prenda ideal (playeras, chamarras, suéteres...)">
+                    <button class="search-btn" onclick="searchProducts()">Buscar</button>
+                </div>
+            </div>
+
+            <!-- FILTROS -->
+            <div class="filters-section">
+                <h2 class="filters-title">Encuentra Tu Estilo Perfecto</h2>
+                <div class="filters">
+                    <div class="filter-group">
+                        <label class="filter-label">Categoría</label>
+                        <select id="categoryFilter">
+                            <option value="all">Todas las Categorías</option>
+                            <option value="playeras">Playeras</option>
+                            <option value="chamarras">Chamarras</option>
+                            <option value="sueteres">Suéteres</option>
+                            <option value="mariconeras">Mariconeras</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label class="filter-label">Rango de Precio</label>
+                        <select id="priceFilter">
+                            <option value="all">Todos los Precios</option>
+                            <option value="low">Menor a $300</option>
+                            <option value="medium">$300 - $600</option>
+                            <option value="high">Mayor a $600</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PRODUCTOS -->
+            <div class="products-grid" id="productsGrid"></div>
+        </div>
+
+        <!-- SECCIÓN DE CONTACTO -->
+        <div class="container">
+            <div class="contact-section" id="contact">
+                <div class="contact-content">
+                    <h2 class="contact-title">¿Listo para Elevar Tu Estilo?</h2>
+                    <p class="contact-subtitle">Contáctanos y descubre cómo podemos ayudarte a lucir increíble</p>
+                    
+                    <div class="contact-grid">
+                        <div class="contact-card">
+                            <div class="contact-icon">📱</div>
+                            <div class="contact-label">WhatsApp</div>
+                            <div class="contact-info">
+                                <a href="https://wa.me/5212345678901" class="contact-link" target="_blank">
+                                    +52 123 456 7890
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-card">
+                            <div class="contact-icon">📸</div>
+                            <div class="contact-label">Instagram</div>
+                            <div class="contact-info">
+                                <a href="https://instagram.com/jplestilo" class="contact-link" target="_blank">
+                                    @jplestilo
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+      
+    </div>
+
+    <script>
+        const products = [
+            {
+                id: 1,
+                name: "Playera Estampada Premium",
+                category: "playeras",
+                price: 280,
+                sizes: ["S", "M", "L", "XL", "XXL"],
+                colors: ["#000000", "#FFFFFF", "#FF0000", "#0000FF"],
+                icon: "👕",
+                badge: "NUEVO",
+                imageUrl: "IMG/ESTILO PRIVADO.jpg" 
+            },
+            {
+                id: 2,
+                name: "Playera Básica Negra",
+                category: "playeras",
+                price: 200,
+                sizes: ["S", "M", "L", "XL"],
+                colors: ["#000000", "#808080", "#FFFFFF"],
+                icon: "👕",
+                badge: "POPULAR",
+                imageUrl: "IMG/ESTILO PRIVADO.jpg"
+            },
+            {
+                id: 3,
+                name: "Chamarra Bomber Negra",
+                category: "chamarras",
+                price: 850,
+                sizes: ["M", "L", "XL"],
+                colors: ["#000000", "#696969", "#8B4513"],
+                icon: "🧥",
+                badge: "NUEVO",
+                imageUrl: "IMG/ESTILO PRIVADO.jpg"
+            },
+            {
+                id: 4,
+                name: "Chamarra Jean Azul",
+                category: "chamarras",
+                price: 750,
+                sizes: ["S", "M", "L", "XL"],
+                colors: ["#1E90FF", "#000080", "#696969"],
+                icon: "🧥",
+                badge: "TENDENCIA",
+                imageUrl: "IMG/ESTILO PRIVADO.jpg"
+            },
+            {
+                id: 5,
+                name: "Suéter Cuello Redondo Gris",
+                category: "sueteres",
+                price: 420,
+                sizes: ["M", "L", "XL", "XXL"],
+                colors: ["#808080", "#000000", "#FFFFFF", "#000080"],
+                icon: "🧶",
+                badge: "POPULAR",
+                imageUrl: "IMG/ESTILO PRIVADO.jpg"
+            },
+            {
+                id: 6,
+                name: "Suéter Con Capucha Negro",
+                category: "sueteres",
+                price: 480,
+                sizes: ["S", "M", "L", "XL"],
+                colors: ["#000000", "#696969", "#FF0000"],
+                icon: "🧶",
+                badge: "OFERTA",
+                imageUrl: "IMG/ESTILO PRIVADO.jpg"
+            },
+            {
+                id: 7,
+                name: "Mariconera Deportiva Negra",
+                category: "mariconeras",
+                price: 320,
+                sizes: ["Única"],
+                colors: ["#000000", "#808080", "#0000FF"],
+                icon: "👜",
+                badge: "NUEVO",
+                imageUrl: "IMG/ESTILO PRIVADO.jpg"
+            },
+            {
+                id: 8,
+                name: "Mariconera Casual Beige",
+                category: "mariconeras",
+                price: 290,
+                sizes: ["Única"],
+                colors: ["#F5DEB3", "#8B4513", "#000000"],
+                icon: "👜",
+                badge: "POPULAR",
+                imageUrl: "IMG/ESTILO PRIVADO.jpg"
+            },
+            {
+                id: 9,
+                name: "Playera Gráfica Premium",
+                category: "playeras",
+                price: 320,
+                sizes: ["M", "L", "XL"],
+                colors: ["#FFFFFF", "#000000", "#808080"],
+                icon: "👕",
+                badge: "TENDENCIA",
+                imageUrl: "IMG/ESTILO PRIVADO.jpg"
+            },
+            {
+                id: 10,
+                name: "Chamarra Parka Verde",
+                category: "chamarras",
+                price: 920,
+                sizes: ["L", "XL", "XXL"],
+                colors: ["#556B2F", "#000000", "#8B4513"],
+                icon: "🧥",
+                badge: "PREMIUM",
+                imageUrl: "IMG/ESTILO PRIVADO.jpg"
+            },
+            {
+                id: 11,
+                name: "Suéter Rayas Azul",
+                category: "sueteres",
+                price: 450,
+                sizes: ["S", "M", "L", "XL"],
+                colors: ["#0000FF", "#FFFFFF", "#000080"],
+                icon: "🧶",
+                badge: "NUEVO",
+                imageUrl: "IMG/ESTILO PRIVADO.jpg"
+            },
+            {
+                id: 12,
+                name: "Mariconera Crossbody Negra",
+                category: "mariconeras",
+                price: 350,
+                sizes: ["Única"],
+                colors: ["#000000", "#696969"],
+                icon: "👜",
+                badge: "OFERTA",
+                imageUrl: "IMG/ESTILO PRIVADO.jpg"
+            }
+        ];
+
+        const categoryFilter = document.getElementById('categoryFilter');
+        const priceFilter = document.getElementById('priceFilter');
+        const searchInput = document.getElementById('searchInput');
+        const productsGrid = document.getElementById('productsGrid');
+
+        function renderProducts(filteredProducts) {
+            if (filteredProducts.length === 0) {
+                productsGrid.innerHTML = `
+                    <div class="no-products">
+                        <div class="no-products-icon">🔍</div>
+                        <p class="no-products-text">No se encontraron productos con los filtros seleccionados</p>
+                    </div>
+                `;
+                return;
+            }
+
+            productsGrid.innerHTML = filteredProducts.map(product => `
+                <div class="product-card">
+                    <div class="product-ribbon">${product.badge}</div>
+                    <div class="product-image">
+                        ${product.imageUrl ? `<img src="${product.imageUrl}" alt="${product.name}">` : `<div class="product-image-placeholder">${product.icon}</div>`}
+                        <div class="upload-overlay"></div>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">${product.category}</div>
+                        <div class="product-name">${product.name}</div>
+                        <div class="product-price">$${product.price} MXN</div>
+                        <div class="product-details">
+                            <div class="detail-item">
+                                <span class="detail-label">Tallas:</span>
+                                <div class="sizes">
+                                    ${product.sizes.map(size => `<span class="size-badge">${size}</span>`).join('')}
+                                </div>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Colores:</span>
+                                <div class="colors">
+                                    ${product.colors.map(color => `
+                                        <div class="color-dot" style="background-color: ${color};" title="${color}"></div>
+                                    `).join('')}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function filterProducts() {
+            const category = categoryFilter.value;
+            const priceRange = priceFilter.value;
+            const searchTerm = searchInput.value.toLowerCase();
+
+            let filtered = products;
+
+            if (searchTerm) {
+                filtered = filtered.filter(p => 
+                    p.name.toLowerCase().includes(searchTerm) || 
+                    p.category.toLowerCase().includes(searchTerm)
+                );
+            }
+
+            if (category !== 'all') {
+                filtered = filtered.filter(p => p.category === category);
+            }
+
+            if (priceRange === 'low') {
+                filtered = filtered.filter(p => p.price < 300);
+            } else if (priceRange === 'medium') {
+                filtered = filtered.filter(p => p.price >= 300 && p.price <= 600);
+            } else if (priceRange === 'high') {
+                filtered = filtered.filter(p => p.price > 600);
+            }
+
+            renderProducts(filtered);
+        }
+
+        function searchProducts() {
+            filterProducts();
+        }
+
+        function filterByCategory(category) {
+            categoryFilter.value = category;
+            filterProducts();
+            updateActiveLink(event);
+        }
+
+        function filterByBadge(badge) {
+            const filtered = products.filter(p => p.badge === badge);
+            renderProducts(filtered);
+        }
+
+        function showAllProducts() {
+            categoryFilter.value = 'all';
+            priceFilter.value = 'all';
+            searchInput.value = '';
+            renderProducts(products);
+            updateActiveLink(event);
+        }
+
+        function updateActiveLink(event) {
+            document.querySelectorAll('.sidebar-link').forEach(link => {
+                link.classList.remove('active');
+            });
+            if (event && event.target) {
+                event.target.classList.add('active');
+            }
+        }
+
+        function toggleSidebar() {
+            document.getElementById('sidebar').classList.toggle('active');
+        }
+
+        categoryFilter.addEventListener('change', filterProducts);
+        priceFilter.addEventListener('change', filterProducts);
+        searchInput.addEventListener('input', filterProducts);
+
+        renderProducts(products);
+    </script>
+</body>
+</html>
